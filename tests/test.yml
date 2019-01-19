@@ -14,6 +14,10 @@
 
   - name: Validate that the correct result is returned for our dig
     assert:
-      that: dig_result.stdout.find('52.62.218.204') != -1
+      that: dig_result.stdout.find('54.66.174.34') != -1
     tags:
       - functional-test
+
+  - name: Print dig result
+    debug:
+      msg: "dig result - dig_result: {{ dig_result.stdout }}"
